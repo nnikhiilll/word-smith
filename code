@@ -1,0 +1,69 @@
+import random
+import time
+
+# reads words into list
+f = open("valid_words.txt")
+validWords = f.readlines()
+validWords = [x.strip() for x in validWords]
+f.close()
+
+alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+letter=[]
+
+print("Welcome to WordSmith! In this game, come up with as many words as you can using the 7 letters you are given. Press Enter to begin!")
+print("ready...")
+time.sleep(1)
+print("set...")
+time.sleep(1)
+print("go!")
+
+print("Your random letters are: ")
+for i in range(7):
+  letter.append(alphabet[random.randint(0,len(alphabet)-1)])
+print(letter)
+
+used=[]
+score=0
+while True:
+  word=input("Enter a word: ")
+  valid=True
+  for i in word:
+    if i in letter:
+      next
+    else:
+      valid=False
+  if valid is True:
+    if word in validWords and word not in used:
+      score+=len(word)
+      used.append(word)
+      print("Valid word! Your score is: "+str(score))
+    else:
+      print("Invalid word.")
+  else:
+    print("you can only use the 7 letter you were given.")  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
