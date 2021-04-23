@@ -1,0 +1,2 @@
+# word-smith
+essentially scrabble
